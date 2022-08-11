@@ -1,0 +1,2342 @@
+Script started on 2022-08-11 14:24:44-04:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="79" LINES="26"]
+]0;hridweek@hridweek-VirtualBox: ~[01;32mhridweek@hridweek-VirtualBox[00m:[01;34m~[00m$ cd R[Koaic
+]0;hridweek@hridweek-VirtualBox: ~/oaic[01;32mhridweek@hridweek-VirtualBox[00m:[01;34m~/oaic[00m$ cd RIC-Deployment/tools/k8s/bin
+]0;hridweek@hridweek-VirtualBox: ~/oaic/RIC-Deployment/tools/k8s/bin[01;32mhridweek@hridweek-VirtualBox[00m:[01;34m~/oaic/RIC-Deployment/tools/k8s/bin[00m$ ls[K[K.[Kls
+[0m[01;32mdeploy-stack.sh[0m       [01;32minstall[0m                                      [01;32muninstall[0m
+[01;32mgen-cloud-init.sh[0m     [01;32mk8s-1node-cloud-init-k_1_16-h_2_17-d_cur.sh[0m
+[01;32mgen-ric-heat-yaml.sh[0m  [01;32mundeploy-stack.sh[0m
+]0;hridweek@hridweek-VirtualBox: ~/oaic/RIC-Deployment/tools/k8s/bin[01;32mhridweek@hridweek-VirtualBox[00m:[01;34m~/oaic/RIC-Deployment/tools/k8s/bin[00m$ ./gen-cloud-i nit.sh
+reading in values in /home/hridweek/oaic/RIC-Deployment/tools/k8s/bin/../etc/infra.rc
+reading in values in /home/hridweek/oaic/RIC-Deployment/tools/k8s/bin/../etc/env.rc
+reading in values in /home/hridweek/oaic/RIC-Deployment/tools/k8s/bin/../etc/openstack.rc
+
+]0;hridweek@hridweek-VirtualBox: ~/oaic/RIC-Deployment/tools/k8s/bin[01;32mhridweek@hridweek-VirtualBox[00m:[01;34m~/oaic/RIC-Deployment/tools/k8s/bin[00m$ 
+]0;hridweek@hridweek-VirtualBox: ~/oaic/RIC-Deployment/tools/k8s/bin[01;32mhridweek@hridweek-VirtualBox[00m:[01;34m~/oaic/RIC-Deployment/tools/k8s/bin[00m$ sudo ./k8s-1m ode[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K1n ode-cloud-init-k_1_16-h_2_17-d_cus[Kr.sh
+[sudo] password for hridweek: 
++ echo k8s_vm_install.sh
+k8s_vm_install.sh
++ set -x
++ export DEBIAN_FRONTEND=noninteractive
++ DEBIAN_FRONTEND=noninteractive
+++ hostname -I
+++ hostname
++ echo '10.0.2.15 172.17.0.1  hridweek-VirtualBox'
++ printenv
+SHELL=/bin/bash
+COLORTERM=truecolor
+SUDO_GID=1000
+SUDO_COMMAND=./k8s-1node-cloud-init-k_1_16-h_2_17-d_cur.sh
+SUDO_USER=hridweek
+PWD=/home/hridweek/oaic/RIC-Deployment/tools/k8s/bin
+LOGNAME=root
+XAUTHORITY=/run/user/1000/gdm/Xauthority
+HOME=/root
+LANG=en_US.UTF-8
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+TERM=xterm-256color
+USER=root
+DISPLAY=:0
+SHLVL=1
+KUBECONFIG=/root/.kube/config
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+SUDO_UID=1000
+MAIL=/var/mail/root
+DEBIAN_FRONTEND=noninteractive
+_=/usr/bin/printenv
++ IPV6IF=
++ rm -rf /opt/config
++ mkdir -p /opt/config
++ echo ''
++ echo 1.16.0
++ echo 0.7.5
++ echo 2.17.0
+++ hostname -I
++ echo '10.0.2.15 172.17.0.1 '
+++ curl ifconfig.co
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100    14  100    14    0     0     53      0 --:--:-- --:--:-- --:--:--    53
++ echo 216.15.16.180
+++ hostname -I
++ echo '10.0.2.15 172.17.0.1 '
++ echo __mtu__
++ echo __cinder_volume_id__
+++ hostname
++ echo hridweek-VirtualBox
++ ISAUX=false
+++ cat /opt/config/stack_name.txt
++ [[ hridweek-VirtualBox == *aux* ]]
++ modprobe -- ip_vs
++ modprobe -- ip_vs_rr
++ modprobe -- ip_vs_wrr
++ modprobe -- ip_vs_sh
++ modprobe -- nf_conntrack_ipv4
+modprobe: FATAL: Module nf_conntrack_ipv4 not found in directory /lib/modules/5.15.0-43-generic
++ modprobe -- nf_conntrack_ipv6
+modprobe: FATAL: Module nf_conntrack_ipv6 not found in directory /lib/modules/5.15.0-43-generic
++ modprobe -- nf_conntrack_proto_sctp
+modprobe: FATAL: Module nf_conntrack_proto_sctp not found in directory /lib/modules/5.15.0-43-generic
++ '[' '!' -z '' ']'
+++ grep swap /etc/fstab
+++ sed '/^[ \t]*#/ d'
+++ sed 's/[\t ]/ /g'
+++ tr -s ' '
+++ cut -f1 '-d '
++ SWAPFILES=
++ '[' '!' -z ']'
+++ cat /opt/config/docker_version.txt
++ DOCKERV=
+++ cat /opt/config/k8s_version.txt
++ KUBEV=1.16.0
+++ cat /opt/config/k8s_cni_version.txt
++ KUBECNIV=0.7.5
++ KUBEVERSION=1.16.0-00
++ CNIVERSION=0.7.5-00
++ DOCKERVERSION=
+++ lsb_release -r
+++ sed 's/^[a-zA-Z:\t ]\+//g'
++ UBUNTU_RELEASE=20.04
++ [[ 20.04 == 16.* ]]
++ [[ 20.04 == 18.* ]]
++ [[ 20.04 == 20.* ]]
++ echo 'Installing on Ubuntu 20.04 (Focal Fossa)'
+Installing on Ubuntu 20.04 (Focal Fossa)
++ '[' '!' -z '' ']'
++ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg
++ apt-key add -
+OK
++ echo 'deb http://apt.kubernetes.io/ kubernetes-xenial main'
++ mkdir -p /etc/apt/apt.conf.d
++ echo 'APT::Acquire::Retries "3";'
++ apt-get update
+0% [Working]            Hit:1 http://security.ubuntu.com/ubuntu focal-security InRelease
+0% [Connecting to kazooie.canonical.com] [Connecting to ppa.launchpad.net] [Wa                                                                              0% [Waiting for headers] [Connecting to ppa.launchpad.net]                                                          Hit:3 http://us.archive.ubuntu.com/ubuntu focal InRelease
+                                                          Hit:4 http://us.archive.ubuntu.com/ubuntu focal-updates InRelease
+0% [Waiting for headers] [Connecting to ppa.launchpad.net (185.125.190.52)]                                                                           Hit:5 http://us.archive.ubuntu.com/ubuntu focal-backports InRelease
+                                                                           0% [Connecting to ppa.launchpad.net (185.125.190.52)]                                                     Hit:6 http://ppa.launchpad.net/ettusresearch/uhd/ubuntu focal InRelease
+                                                     0% [Waiting for headers]                        Hit:2 https://packages.cloud.google.com/apt kubernetes-xenial InRelease
+0% [Connecting to ppa.launchpad.net (185.125.190.52)]                                                     Hit:7 http://ppa.launchpad.net/softwareradiosystems/srsran/ubuntu focal InRelease
+                                                     0% [Working]0% [Working]0% [Working]0% [Working]0% [Working]0% [Working]0% [Working]0% [Working]0% [Working]20% [Working]             Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 2%Reading package lists... 2%Reading package lists... 4%Reading package lists... 4%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 24%Reading package lists... 31%Reading package lists... 31%Reading package lists... 44%Reading package lists... 44%Reading package lists... 57%Reading package lists... 57%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 62%Reading package lists... 63%Reading package lists... 63%Reading package lists... 65%Reading package lists... 65%Reading package lists... 69%Reading package lists... 69%Reading package lists... 72%Reading package lists... 72%Reading package lists... 72%Reading package lists... 72%Reading package lists... 74%Reading package lists... 74%Reading package lists... 76%Reading package lists... 77%Reading package lists... 77%Reading package lists... 79%Reading package lists... 79%Reading package lists... 79%Reading package lists... 79%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 85%Reading package lists... 85%Reading package lists... 86%Reading package lists... 86%Reading package lists... 89%Reading package lists... 89%Reading package lists... 92%Reading package lists... 92%Reading package lists... 92%Reading package lists... 92%Reading package lists... 94%Reading package lists... 94%Reading package lists... 96%Reading package lists... 96%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+++ apt-get install -y virt-what curl jq netcat make ipset moreutils
++ RES='Reading package lists...
+Building dependency tree...
+Reading state information...
+make is already the newest version (4.2.1-1.2).
+moreutils is already the newest version (0.63-1).
+netcat is already the newest version (1.206-1ubuntu1).
+virt-what is already the newest version (1.19-1).
+curl is already the newest version (7.68.0-1ubuntu2.12).
+ipset is already the newest version (7.5-1ubuntu0.20.04.1).
+jq is already the newest version (1.6-1ubuntu0.20.04.1).
+0 upgraded, 0 newly installed, 0 to remove and 262 not upgraded.'
++ [[ Reading package lists...
+Building dependency tree...
+Reading state information...
+make is already the newest version (4.2.1-1.2).
+moreutils is already the newest version (0.63-1).
+netcat is already the newest version (1.206-1ubuntu1).
+virt-what is already the newest version (1.19-1).
+curl is already the newest version (7.68.0-1ubuntu2.12).
+ipset is already the newest version (7.5-1ubuntu0.20.04.1).
+jq is already the newest version (1.6-1ubuntu0.20.04.1).
+0 upgraded, 0 newly installed, 0 to remove and 262 not upgraded. == */var/lib/dpkg/lock* ]]
++ grep virtualbox
+++ virt-what
++ echo virtualbox kvm
+virtualbox kvm
++ APTOPTS='--allow-downgrades --allow-change-held-packages --allow-unauthenticated --ignore-hold '
++ for PKG in kubeadm docker.io
+++ cut -f3 -d ' '
+++ tr -s ' '
+++ grep kubeadm
+++ dpkg --list
++ INSTALLED_VERSION=1.16.0-00
++ '[' '!' -z 1.16.0-00 ']'
++ '[' kubeadm == kubeadm ']'
++ kubeadm reset -f
+[reset] Reading configuration from the cluster...
+[reset] FYI: You can look at this config file with 'kubectl -n kube-system get cm kubeadm-config -oyaml'
+W0811 14:30:07.837517   40633 reset.go:96] [reset] Unable to fetch the kubeadm-config ConfigMap from cluster: failed to get config map: Get https://10.0.2.15:6443/api/v1/namespaces/kube-system/configmaps/kubeadm-config: dial tcp 10.0.2.15:6443: connect: connection refused
+[preflight] Running pre-flight checks
+W0811 14:30:07.840143   40633 removeetcdmember.go:79] [reset] No kubeadm config, using etcd pod spec to get data directory
+[reset] Stopping the kubelet service
+[reset] Unmounting mounted directories in "/var/lib/kubelet"
+[reset] Deleting contents of config directories: [/etc/kubernetes/manifests /etc/kubernetes/pki]
+[reset] Deleting files: [/etc/kubernetes/admin.conf /etc/kubernetes/kubelet.conf /etc/kubernetes/bootstrap-kubelet.conf /etc/kubernetes/controller-manager.conf /etc/kubernetes/scheduler.conf]
+[reset] Deleting contents of stateful directories: [/var/lib/etcd /var/lib/kubelet /etc/cni/net.d /var/lib/dockershim /var/run/kubernetes /var/lib/cni]
+
+The reset process does not reset or clean up iptables rules or IPVS tables.
+If you wish to reset iptables, you must do so manually by using the "iptables" command.
+
+If your cluster was setup to utilize IPVS, run ipvsadm --clear (or similar)
+to reset your system's IPVS tables.
+
+The reset process does not clean your kubeconfig files and you must remove them manually.
+Please, check the contents of the $HOME/.kube/config file.
++ rm -rf /root/.kube
++ apt-get -y --allow-downgrades --allow-change-held-packages --allow-unauthenticated --ignore-hold remove kubeadm kubelet kubectl kubernetes-cni
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  conntrack cri-tools ebtables socat
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  kubeadm kubectl kubelet kubernetes-cni
+The following held packages will be changed:
+  kubeadm kubectl kubelet kubernetes-cni
+0 upgraded, 0 newly installed, 4 to remove and 258 not upgraded.
+After this operation, 264 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 227383 files and directories currently installed.)
+Removing kubeadm (1.16.0-00) ...
+Removing kubectl (1.16.0-00) ...
+Removing kubelet (1.16.0-00) ...
+Removing kubernetes-cni (0.7.5-00) ...
+dpkg: warning: while removing kubernetes-cni, directory '/opt' not empty so not removed
++ for PKG in kubeadm docker.io
+++ tr -s ' '
+++ grep docker.io
+++ cut -f3 -d ' '
+++ dpkg --list
++ INSTALLED_VERSION=20.10.12-0ubuntu2~20.04.1
++ '[' '!' -z 20.10.12-0ubuntu2~20.04.1 ']'
++ '[' docker.io == kubeadm ']'
++ apt-get -y --allow-downgrades --allow-change-held-packages --allow-unauthenticated --ignore-hold remove docker.io
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  bridge-utils conntrack containerd cri-tools ebtables pigz runc socat
+  ubuntu-fan
+Use 'sudo apt autoremove' to remove them.
+The following packages will be REMOVED:
+  docker.io
+The following held packages will be changed:
+  docker.io
+0 upgraded, 0 newly installed, 1 to remove and 258 not upgraded.
+After this operation, 163 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 227363 files and directories currently installed.)
+Removing docker.io (20.10.12-0ubuntu2~20.04.1) ...
+'/usr/share/docker.io/contrib/nuke-graph-directory.sh' -> '/var/lib/docker/nuke-graph-directory.sh'
+Processing triggers for man-db (2.9.1-1) ...
++ apt-get -y autoremove
+Reading package lists... 0%Reading package lists... 0%Reading package lists... 0%Reading package lists... 2%Reading package lists... 2%Reading package lists... 4%Reading package lists... 4%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 6%Reading package lists... 9%Reading package lists... 29%Reading package lists... 31%Reading package lists... 31%Reading package lists... 44%Reading package lists... 44%Reading package lists... 57%Reading package lists... 57%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 58%Reading package lists... 63%Reading package lists... 63%Reading package lists... 65%Reading package lists... 65%Reading package lists... 69%Reading package lists... 69%Reading package lists... 69%Reading package lists... 72%Reading package lists... 72%Reading package lists... 72%Reading package lists... 72%Reading package lists... 74%Reading package lists... 74%Reading package lists... 77%Reading package lists... 77%Reading package lists... 79%Reading package lists... 79%Reading package lists... 79%Reading package lists... 79%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 80%Reading package lists... 85%Reading package lists... 85%Reading package lists... 86%Reading package lists... 86%Reading package lists... 89%Reading package lists... 89%Reading package lists... 92%Reading package lists... 92%Reading package lists... 92%Reading package lists... 92%Reading package lists... 94%Reading package lists... 94%Reading package lists... 96%Reading package lists... 96%Reading package lists... 96%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 98%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... 99%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following packages will be REMOVED:
+  bridge-utils conntrack containerd cri-tools ebtables pigz runc socat
+  ubuntu-fan
+0 upgraded, 0 newly installed, 9 to remove and 258 not upgraded.
+After this operation, 205 MB disk space will be freed.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 227157 files and directories currently installed.)
+Removing ubuntu-fan (0.12.13ubuntu0.1) ...
+ubuntu-fan: removing default /etc/network/fan configuration
+Removing bridge-utils (1.6-2ubuntu1) ...
+Removing conntrack (1:1.4.5-2) ...
+Removing containerd (1.5.9-0ubuntu1~20.04.4) ...
+Removing cri-tools (1.24.2-00) ...
+Removing ebtables (2.0.11-3build1) ...
+Removing pigz (2.4-1) ...
+Removing runc (1.1.0-0ubuntu1~20.04.1) ...
+Removing socat (1.7.3.3-2) ...
+Processing triggers for man-db (2.9.1-1) ...
++ '[' -z ']'
++ apt-get install -y --allow-downgrades --allow-change-held-packages --allow-unauthenticated --ignore-hold docker.io
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following additional packages will be installed:
+  bridge-utils containerd pigz runc ubuntu-fan
+Suggested packages:
+  ifupdown aufs-tools btrfs-progs cgroupfs-mount | cgroup-lite debootstrap
+  docker-doc rinse zfs-fuse | zfsutils
+The following NEW packages will be installed:
+  bridge-utils containerd docker.io pigz runc ubuntu-fan
+0 upgraded, 6 newly installed, 0 to remove and 258 not upgraded.
+Need to get 0 B/68.9 MB of archives.
+After this operation, 333 MB of additional disk space will be used.
+Preconfiguring packages ...
+Selecting previously unselected package pigz.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 226984 files and directories currently installed.)
+Preparing to unpack .../0-pigz_2.4-1_amd64.deb ...
+Unpacking pigz (2.4-1) ...
+Selecting previously unselected package bridge-utils.
+Preparing to unpack .../1-bridge-utils_1.6-2ubuntu1_amd64.deb ...
+Unpacking bridge-utils (1.6-2ubuntu1) ...
+Selecting previously unselected package runc.
+Preparing to unpack .../2-runc_1.1.0-0ubuntu1~20.04.1_amd64.deb ...
+Unpacking runc (1.1.0-0ubuntu1~20.04.1) ...
+Selecting previously unselected package containerd.
+Preparing to unpack .../3-containerd_1.5.9-0ubuntu1~20.04.4_amd64.deb ...
+Unpacking containerd (1.5.9-0ubuntu1~20.04.4) ...
+Selecting previously unselected package docker.io.
+Preparing to unpack .../4-docker.io_20.10.12-0ubuntu2~20.04.1_amd64.deb ...
+Unpacking docker.io (20.10.12-0ubuntu2~20.04.1) ...
+Selecting previously unselected package ubuntu-fan.
+Preparing to unpack .../5-ubuntu-fan_0.12.13ubuntu0.1_all.deb ...
+Unpacking ubuntu-fan (0.12.13ubuntu0.1) ...
+Setting up runc (1.1.0-0ubuntu1~20.04.1) ...
+Setting up bridge-utils (1.6-2ubuntu1) ...
+Setting up pigz (2.4-1) ...
+Setting up containerd (1.5.9-0ubuntu1~20.04.4) ...
+Setting up ubuntu-fan (0.12.13ubuntu0.1) ...
+Setting up docker.io (20.10.12-0ubuntu2~20.04.1) ...
+Processing triggers for systemd (245.4-4ubuntu3.15) ...
+Processing triggers for man-db (2.9.1-1) ...
++ cat
++ mkdir -p /etc/systemd/system/docker.service.d
++ systemctl enable docker.service
++ systemctl daemon-reload
++ systemctl restart docker
++ '[' -z 0.7.5-00 ']'
++ apt-get install -y --allow-downgrades --allow-change-held-packages --allow-unauthenticated --ignore-hold kubernetes-cni=0.7.5-00
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following NEW packages will be installed:
+  kubernetes-cni
+0 upgraded, 1 newly installed, 0 to remove and 258 not upgraded.
+Need to get 0 B/6,473 kB of archives.
+After this operation, 50.2 MB of additional disk space will be used.
+Selecting previously unselected package kubernetes-cni.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 227295 files and directories currently installed.)
+Preparing to unpack .../kubernetes-cni_0.7.5-00_amd64.deb ...
+Unpacking kubernetes-cni (0.7.5-00) ...
+Setting up kubernetes-cni (0.7.5-00) ...
++ '[' -z 1.16.0-00 ']'
++ apt-get install -y --allow-downgrades --allow-change-held-packages --allow-unauthenticated --ignore-hold kubeadm=1.16.0-00 kubelet=1.16.0-00 kubectl=1.16.0-00
+Reading package lists... 0%Reading package lists... 100%Reading package lists... Done
+Building dependency tree... 0%Building dependency tree... 0%Building dependency tree... 50%Building dependency tree... 50%Building dependency tree       
+Reading state information... 0%Reading state information... 0%Reading state information... Done
+The following additional packages will be installed:
+  conntrack cri-tools ebtables socat
+Suggested packages:
+  nftables
+The following NEW packages will be installed:
+  conntrack cri-tools ebtables kubeadm kubectl kubelet socat
+0 upgraded, 7 newly installed, 0 to remove and 259 not upgraded.
+Need to get 0 B/51.4 MB of archives.
+After this operation, 249 MB of additional disk space will be used.
+Selecting previously unselected package conntrack.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 227311 files and directories currently installed.)
+Preparing to unpack .../0-conntrack_1%3a1.4.5-2_amd64.deb ...
+Unpacking conntrack (1:1.4.5-2) ...
+Selecting previously unselected package cri-tools.
+Preparing to unpack .../1-cri-tools_1.24.2-00_amd64.deb ...
+Unpacking cri-tools (1.24.2-00) ...
+Selecting previously unselected package ebtables.
+Preparing to unpack .../2-ebtables_2.0.11-3build1_amd64.deb ...
+Unpacking ebtables (2.0.11-3build1) ...
+Selecting previously unselected package socat.
+Preparing to unpack .../3-socat_1.7.3.3-2_amd64.deb ...
+Unpacking socat (1.7.3.3-2) ...
+Selecting previously unselected package kubelet.
+Preparing to unpack .../4-kubelet_1.16.0-00_amd64.deb ...
+Unpacking kubelet (1.16.0-00) ...
+Selecting previously unselected package kubectl.
+Preparing to unpack .../5-kubectl_1.16.0-00_amd64.deb ...
+Unpacking kubectl (1.16.0-00) ...
+Selecting previously unselected package kubeadm.
+Preparing to unpack .../6-kubeadm_1.16.0-00_amd64.deb ...
+Unpacking kubeadm (1.16.0-00) ...
+Setting up conntrack (1:1.4.5-2) ...
+Setting up kubectl (1.16.0-00) ...
+Setting up ebtables (2.0.11-3build1) ...
+Setting up socat (1.7.3.3-2) ...
+Setting up cri-tools (1.24.2-00) ...
+Setting up kubelet (1.16.0-00) ...
+Setting up kubeadm (1.16.0-00) ...
+Processing triggers for man-db (2.9.1-1) ...
++ apt-mark hold docker.io kubernetes-cni kubelet kubeadm kubectl
+docker.io set on hold.
+kubernetes-cni set on hold.
+kubelet set on hold.
+kubeadm set on hold.
+kubectl set on hold.
++ kubeadm config images pull --kubernetes-version=1.16.0
+[config/images] Pulled k8s.gcr.io/kube-apiserver:v1.16.0
+[config/images] Pulled k8s.gcr.io/kube-controller-manager:v1.16.0
+[config/images] Pulled k8s.gcr.io/kube-scheduler:v1.16.0
+[config/images] Pulled k8s.gcr.io/kube-proxy:v1.16.0
+[config/images] Pulled k8s.gcr.io/pause:3.1
+[config/images] Pulled k8s.gcr.io/etcd:3.3.15-0
+[config/images] Pulled k8s.gcr.io/coredns:1.6.2
++ NODETYPE=master
++ '[' master == master ']'
++ [[ 1.16.0 == 1.13.* ]]
++ [[ 1.16.0 == 1.14.* ]]
++ [[ 1.16.0 == 1.15.* ]]
++ [[ 1.16.0 == 1.16.* ]]
++ cat
++ cat
++ kubeadm init --config /root/config.yaml
+[init] Using Kubernetes version: v1.16.0
+[preflight] Running pre-flight checks
+	[WARNING SystemVerification]: this Docker version is not on the list of validated versions: 20.10.12. Latest validated version: 18.09
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+[kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+[kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+[kubelet-start] Activating the kubelet service
+[certs] Using certificateDir folder "/etc/kubernetes/pki"
+[certs] Generating "ca" certificate and key
+[certs] Generating "apiserver" certificate and key
+[certs] apiserver serving cert is signed for DNS names [hridweek-virtualbox kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 10.0.2.15]
+[certs] Generating "apiserver-kubelet-client" certificate and key
+[certs] Generating "front-proxy-ca" certificate and key
+[certs] Generating "front-proxy-client" certificate and key
+[certs] Generating "etcd/ca" certificate and key
+[certs] Generating "etcd/server" certificate and key
+[certs] etcd/server serving cert is signed for DNS names [hridweek-virtualbox localhost] and IPs [10.0.2.15 127.0.0.1 ::1]
+[certs] Generating "etcd/peer" certificate and key
+[certs] etcd/peer serving cert is signed for DNS names [hridweek-virtualbox localhost] and IPs [10.0.2.15 127.0.0.1 ::1]
+[certs] Generating "etcd/healthcheck-client" certificate and key
+[certs] Generating "apiserver-etcd-client" certificate and key
+[certs] Generating "sa" key and public key
+[kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+[kubeconfig] Writing "admin.conf" kubeconfig file
+[kubeconfig] Writing "kubelet.conf" kubeconfig file
+[kubeconfig] Writing "controller-manager.conf" kubeconfig file
+[kubeconfig] Writing "scheduler.conf" kubeconfig file
+[control-plane] Using manifest folder "/etc/kubernetes/manifests"
+[control-plane] Creating static Pod manifest for "kube-apiserver"
+[control-plane] Creating static Pod manifest for "kube-controller-manager"
+[control-plane] Creating static Pod manifest for "kube-scheduler"
+[etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+[wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests". This can take up to 4m0s
+[kubelet-check] Initial timeout of 40s passed.
+[apiclient] All control plane components are healthy after 51.027505 seconds
+[upload-config] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[kubelet] Creating a ConfigMap "kubelet-config-1.16" in namespace kube-system with the configuration for the kubelets in the cluster
+[upload-certs] Skipping phase. Please see --upload-certs
+[mark-control-plane] Marking the node hridweek-virtualbox as control-plane by adding the label "node-role.kubernetes.io/master=''"
+[mark-control-plane] Marking the node hridweek-virtualbox as control-plane by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[bootstrap-token] Using token: 5bcxcq.ag6ylwzhk4440i9d
+[bootstrap-token] Configuring bootstrap tokens, cluster-info ConfigMap, RBAC Roles
+[bootstrap-token] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstrap-token] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstrap-token] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstrap-token] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes control-plane has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+Then you can join any number of worker nodes by running the following on each as root:
+
+kubeadm join 10.0.2.15:6443 --token 5bcxcq.ag6ylwzhk4440i9d \
+    --discovery-token-ca-cert-hash sha256:fff9b12bd6cb2c2934586053ee7361da59bf7b496eb8f259fc02eacedee31590 
++ cd /root
++ rm -rf .kube
++ mkdir -p .kube
++ cp -i /etc/kubernetes/admin.conf /root/.kube/config
++ chown root:root /root/.kube/config
++ export KUBECONFIG=/root/.kube/config
++ KUBECONFIG=/root/.kube/config
++ echo KUBECONFIG=/root/.kube/config
++ kubectl get pods --all-namespaces
+No resources found
++ kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+namespace/kube-flannel created
+clusterrole.rbac.authorization.k8s.io/flannel created
+clusterrolebinding.rbac.authorization.k8s.io/flannel created
+serviceaccount/flannel created
+configmap/kube-flannel-cfg created
+daemonset.apps/kube-flannel-ds created
++ wait_for_pods_running 8 kube-system
++ NS=kube-system
++ CMD='kubectl get pods --all-namespaces '
++ '[' kube-system '!=' all-namespaces ']'
++ CMD='kubectl get pods -n kube-system '
++ KEYWORD=Running
++ '[' 2 == 3 ']'
++ CMD2='kubectl get pods -n kube-system  | grep "Running" | wc -l'
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
+No resources found in kube-system namespace.
++ NUMPODS=0
++ echo 'waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]'
+waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 0 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
+No resources found in kube-system namespace.
++ NUMPODS=0
++ echo '> waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 0 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
+No resources found in kube-system namespace.
++ NUMPODS=0
++ echo '> waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 0 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=0
++ echo '> waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 0 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=1
++ echo '> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 1 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=1
++ echo '> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 1 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=1
++ echo '> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 1 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=1
++ echo '> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 1 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=1
++ echo '> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 1 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=1
++ echo '> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 1/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 1 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=2
++ echo '> waiting for 2/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 2/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 2 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=2
++ echo '> waiting for 2/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 2/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 2 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
+The connection to the server 10.0.2.15:6443 was refused - did you specify the right host or port?
++ NUMPODS=0
++ echo '> waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 0/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 0 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ grep Running
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ wc -l
++++ kubectl get pods -n kube-system
++++ grep Running
++ NUMPODS=5
++ echo '> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 5/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 5 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=4
++ echo '> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 4/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 4 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ kubectl get pods -n kube-system
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ grep Running
++++ wc -l
++++ kubectl get pods -n kube-system
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ wc -l
++++ grep Running
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running" | wc -l'
++++ kubectl get pods -n kube-system
++++ grep Running
++++ wc -l
++ NUMPODS=3
++ echo '> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]'
+> waiting for 3/8 pods running in namespace [kube-system] with keyword [Running]
++ '[' 3 -lt 8 ']'
++ sleep 5
+++ eval 'kubectl get pods -n kube-system  | grep "Running"
